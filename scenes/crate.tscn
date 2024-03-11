@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgdb6ef2j751y"]
+
+[ext_resource type="Script" path="res://scripts/crate.gd" id="1_km4ac"]
+[ext_resource type="Texture2D" uid="uid://cwq4t2pdgrepo" path="res://sprites/environment/graveyard.png" id="2_8xj5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu5dn"]
+atlas = ExtResource("2_8xj5x")
+region = Rect2(512, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ii72"]
+atlas = ExtResource("2_8xj5x")
+region = Rect2(640, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eq7j5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu5dn")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ii72")
+}],
+"loop": true,
+"name": &"open",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ossh3"]
+size = Vector2(112, 92)
+
+[node name="Crate" type="Node2D"]
+script = ExtResource("1_km4ac")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eq7j5")
+animation = &"closed"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_ossh3")

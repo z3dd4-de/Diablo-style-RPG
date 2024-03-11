@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://36hq767p4xn"]
+
+[ext_resource type="Script" path="res://scripts/gui/credits.gd" id="1_dgykw"]
+[ext_resource type="Texture2D" uid="uid://bgsbu0hlua2d3" path="res://sprites/inventory/book.png" id="1_eaocw"]
+[ext_resource type="Texture2D" uid="uid://dewssi5lfmqe8" path="res://sprites/inventory/wood 2.jpg" id="2_5cfis"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="3_t7184"]
+
+[node name="Credits" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_dgykw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Book" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(418, 268)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_eaocw")
+
+[node name="BackButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_t7184")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1925.0
+offset_bottom = 1077.0
+texture = ExtResource("2_5cfis")
+
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]

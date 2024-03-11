@@ -1,0 +1,14 @@
+Button
+VBoxContainer
+AudioStreamPlayer2D
+CollisionShape2D
+AudioListener2D
+Area2D
+RemoteTransform2D
+Label
+AnimatedSprite2D
+VFlowContainer
+VSplitContainer
+CanvasLayer
+DirectionalLight2D
+ColorRect

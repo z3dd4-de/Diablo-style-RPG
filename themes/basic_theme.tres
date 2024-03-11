@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cewabv0bsrunb"]
+
+[ext_resource type="FontFile" uid="uid://cm5bbk17cbbsr" path="res://fonts/vinque rg.otf" id="1_iawla"]
+
+[resource]
+default_font = ExtResource("1_iawla")
+default_font_size = 40
