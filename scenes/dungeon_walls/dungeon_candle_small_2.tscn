@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://53rg37vihe1k"]
+
+[ext_resource type="Script" path="res://scenes/dungeon_walls/dungeon_candle.gd" id="1_4yiia"]
+[ext_resource type="Texture2D" uid="uid://calw8gksi8nkg" path="res://sprites/twilight-dungeons/twilight-dungeons-objects-tileset.png" id="2_qo7fn"]
+[ext_resource type="Texture2D" uid="uid://dmhk66gv4ghec" path="res://sprites/environment/candle_light.png" id="3_g6s58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oma7k"]
+atlas = ExtResource("2_qo7fn")
+region = Rect2(512, 660, 256, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swjt6"]
+atlas = ExtResource("2_qo7fn")
+region = Rect2(768, 660, 256, 132)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dm4he"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oma7k")
+}],
+"loop": false,
+"name": &"candle_off",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swjt6")
+}],
+"loop": false,
+"name": &"candle_on",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2746k"]
+radius = 35.0
+height = 302.0
+
+[node name="DungeonCandleSmall2" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_4yiia")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dm4he")
+animation = &"candle_off"
+autoplay = "candle_off"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(22, -1)
+polygon = PackedVector2Array(-12, -17, -23, -8, -23, 9, -15, 11, -1, 11, -1, -10)
+
+[node name="CandleSwitchArea2D" type="Area2D" parent="."]
+position = Vector2(21, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CandleSwitchArea2D"]
+position = Vector2(-12, 0)
+shape = SubResource("CapsuleShape2D_2746k")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(14, -22)
+scale = Vector2(1.34, 1.685)
+energy = 1.96
+texture = ExtResource("3_g6s58")
+
+[connection signal="body_entered" from="CandleSwitchArea2D" to="." method="_on_candle_switch_area_2d_body_entered"]
+[connection signal="body_exited" from="CandleSwitchArea2D" to="." method="_on_candle_switch_area_2d_body_exited"]

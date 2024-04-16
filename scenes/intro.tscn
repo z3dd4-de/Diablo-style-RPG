@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://gcebujeu888y"]
+
+[ext_resource type="Texture2D" uid="uid://d2oecdcljtdxm" path="res://sprites/menu/ancient-parchment.png" id="1_emrli"]
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_kegij"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="2_w0uke"]
+[ext_resource type="AudioStream" uid="uid://bl5ikl0fmun4b" path="res://sounds/sonatina_letsadventure_4IslandScenery.ogg" id="4_smmtr"]
+
+[node name="Intro" type="Node2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_kegij")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1592.0
+offset_bottom = 920.0
+color = Color(0.772549, 0.843137, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ancient-parchment" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(507, 260)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_emrli")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Ancient-parchment"]
+offset_left = -393.0
+offset_top = -256.0
+offset_right = 367.0
+offset_bottom = 263.0
+theme = ExtResource("2_w0uke")
+text = "Your were passenger on board the Galleone \"Queen Francisca\" on a voyage to the kingdom \"Mystara\" where you were supposed to become a soldier.
+But a horrible storm came over the ship and it sank. Everybody on board died, but you were lucky and could escape with a small rescue vessel. You lost the rudder, but when you awake the next morning, you were at the coast of an unknown land."
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 612.0
+offset_top = 628.0
+offset_right = 721.0
+offset_bottom = 685.0
+theme = ExtResource("2_w0uke")
+theme_override_font_sizes/font_size = 40
+text = "Close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_smmtr")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

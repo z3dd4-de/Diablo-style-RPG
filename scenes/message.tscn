@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq0o5mkn2cips"]
+[gd_scene load_steps=4 format=3 uid="uid://bq0o5mkn2cips"]
 
 [ext_resource type="Script" path="res://scripts/utils/message_layer.gd" id="1_4csk5"]
-[ext_resource type="FontFile" uid="uid://5a4fmlqkcc8b" path="res://fonts/segoescb.ttf" id="2_775yr"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="2_d28q2"]
+[ext_resource type="FontFile" uid="uid://cm5bbk17cbbsr" path="res://fonts/vinque rg.otf" id="3_p610n"]
 
 [node name="Message" type="CanvasLayer"]
 visible = false
@@ -23,7 +24,8 @@ layout_mode = 2
 [node name="MessageText" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_775yr")
+theme = ExtResource("2_d28q2")
+theme_override_fonts/font = ExtResource("3_p610n")
 theme_override_font_sizes/font_size = 30
 text = "Text"
 

@@ -21,15 +21,21 @@ var _bow = Globals.Bow.NONE
 
 var is_alive: bool
 var death_animation_played: bool
+var has_axe: bool
 var action: String
 var direction: String
+
+#TODO - inventory missing, but I want to test the teleport
+var world_1_teleport_rune: bool = false
+var graveyard_teleport_rune: bool = false
 
 
 func _ready() -> void:
 	is_alive = true
 	death_animation_played = false
+	has_axe = false
 	action = "stance"
-	direction = "_s"
+	direction = "_w"
 	_change_outfit()
 	_change_head()
 	_change_shield()
@@ -47,6 +53,10 @@ func _hero_died() -> void:
 
 func _update_health(addhealth: int) -> void:
 	pass
+
+
+func update_thirst(addwater: int) -> void:
+	thirst.add_water(addwater)
 
 
 func _change_outfit() -> void:
@@ -113,6 +123,8 @@ func _switch_items() -> void:
 		buckler.visible = !buckler.visible
 	if Input.is_action_just_pressed("change_bow"):
 		shortbow.visible = !shortbow.visible
+	if Input.is_action_just_pressed("inventory"):
+		$Inventory.visible = !$Inventory.visible
 
 
 func _animation() -> void:
@@ -174,3 +186,8 @@ func dying() -> void:
 	var animation = action + direction
 	show_item_animation(animation)
 	$AudioDying.play()
+	$EndGameTimer.start()
+
+
+func _on_end_game_timer_timeout():
+	SceneManager.SwitchScene("EndGame")

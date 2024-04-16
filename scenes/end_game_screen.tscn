@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://drco3ver4iex0"]
+
+[ext_resource type="Texture2D" uid="uid://dqdg5fql1x40o" path="res://sprites/map/map_pergament.png" id="1_abs6a"]
+[ext_resource type="Script" path="res://scripts/end_game_screen.gd" id="1_wdj57"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="3_864vl"]
+[ext_resource type="AudioStream" uid="uid://byi24p80hcye4" path="res://sounds/sonatina_letsadventure_10Well-knownToMyHeart.ogg" id="4_icuy8"]
+
+[node name="EndGameScreen" type="Node2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_wdj57")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.5
+offset_top = -425.5
+offset_right = 630.5
+offset_bottom = 425.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_abs6a")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -165.5
+offset_right = 165.5
+offset_bottom = 85.0
+grow_horizontal = 2
+theme = ExtResource("3_864vl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Game over"
+
+[node name="MainMenuButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 302.0
+grow_vertical = 0
+theme = ExtResource("3_864vl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.996078, 0.996078, 0.996078, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
+
+[node name="ExitGameButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -81.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_864vl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.996078, 0.996078, 0.996078, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="EndGameRichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -189.0
+offset_right = 346.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_864vl")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "
+You played the game for
+0:05:08 hours
+and died on day 5."
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_icuy8")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

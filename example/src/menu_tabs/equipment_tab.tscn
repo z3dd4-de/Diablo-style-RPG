@@ -75,7 +75,7 @@ offset_left = 0.0
 offset_top = 6.0
 offset_right = 0.0
 offset_bottom = 6.0
-selected_item_empty_only = false
+selected_item_style = ExtResource("8_wco16")
 autosave_file_path = "items/hero/equip.dat"
 
 [node name="Money" type="Control" parent="Control"]

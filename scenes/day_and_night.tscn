@@ -56,7 +56,7 @@ _data = {
 "night_to_day": SubResource("Animation_uos5m")
 }
 
-[node name="Day_and_Night" type="StaticBody2D"]
+[node name="Day_and_Night" type="Node2D"]
 script = ExtResource("1_yjr3r")
 
 [node name="ColorRect" type="ColorRect" parent="."]

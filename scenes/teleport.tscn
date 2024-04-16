@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8xv4hoagj22g"]
+[gd_scene load_steps=10 format=3 uid="uid://8xv4hoagj22g"]
 
 [ext_resource type="Texture2D" uid="uid://dd4vusknq782n" path="res://sprites/environment/teleport_256.png" id="1_5hjhv"]
 [ext_resource type="Script" path="res://scripts/teleport.gd" id="1_q6av3"]
@@ -51,6 +51,10 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cybyh"]
+radius = 28.59
+height = 102.68
+
 [node name="Teleport" type="Node2D"]
 script = ExtResource("1_q6av3")
 
@@ -61,4 +65,13 @@ animation = &"inactive"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -14)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cybyh")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

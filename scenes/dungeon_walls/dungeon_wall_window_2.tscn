@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://j7wmpsor2eh2"]
+
+[ext_resource type="Texture2D" uid="uid://8sl5gfl11p7x" path="res://sprites/twilight-dungeons/twilight-dungeons-structure-tileset.png" id="1_1wtj1"]
+
+[node name="DungeonWallWindow2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1wtj1")
+region_enabled = true
+region_rect = Rect2(311.489, 563.609, 145.446, 197.316)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-69, 5, -69, 28, 59, 92, 68, 88, 68, 61)

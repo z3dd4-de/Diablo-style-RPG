@@ -10,6 +10,11 @@ func _ready() -> void:
 	hero.thirst.ChangeThirst.connect(_change_thirst)
 	hero.health.HealthChanged.connect(_change_health)
 	hero.hunger.ChangeHunger.connect(_change_hunger)
+	Globals.CloseGUI.connect(switch_visibility)
+
+
+func switch_visibility():
+	self.visible = !self.visible
 
 
 func _process(_delta) -> void:
@@ -28,3 +33,7 @@ func _change_thirst() -> void:
 
 func _change_hunger() -> void:
 	hunger_progress_bar.value = hero.hunger.current_hunger
+	
+
+func change_visibility() -> void:
+	self.visible = !self.visible

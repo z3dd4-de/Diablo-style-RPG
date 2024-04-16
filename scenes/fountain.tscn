@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://d6cipuxq4oc8"]
+[gd_scene load_steps=47 format=3 uid="uid://d6cipuxq4oc8"]
 
 [ext_resource type="Script" path="res://scripts/fountain.gd" id="1_2lnq0"]
 [ext_resource type="Texture2D" uid="uid://clprwri07j1q4" path="res://sprites/fountain_animation/fountain_animation01.png" id="1_x1yjv"]
@@ -183,11 +183,7 @@ animations = [{
 radius = 118.0
 height = 236.0
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pvmca"]
-normal = Vector2(0, 1)
-distance = 74.0
-
-[node name="Fountain" type="Node2D"]
+[node name="Fountain" type="StaticBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_2lnq0")
 
@@ -210,8 +206,8 @@ visible = false
 position = Vector2(0, 44)
 shape = SubResource("CapsuleShape2D_yiqpk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_pvmca")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, -22, -40, -20, -68, -18, -78, -16, -78, 0, -86, 14, -88, 28, -82, 42, -64, 64, -26, 76, 16, 78, 70, 64, 86, 38, 86, 16, 72, -4, 72, -34, 56, -36, 48, -14)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

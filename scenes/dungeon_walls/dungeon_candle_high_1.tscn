@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx2d5ldj2oiwn"]
+
+[ext_resource type="Script" path="res://scenes/dungeon_walls/dungeon_candle.gd" id="1_fwqov"]
+[ext_resource type="Texture2D" uid="uid://calw8gksi8nkg" path="res://sprites/twilight-dungeons/twilight-dungeons-objects-tileset.png" id="1_wykhs"]
+[ext_resource type="Texture2D" uid="uid://dmhk66gv4ghec" path="res://sprites/environment/candle_light.png" id="2_nmx05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mlv2"]
+atlas = ExtResource("1_wykhs")
+region = Rect2(0, 792, 256, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ss1k"]
+atlas = ExtResource("1_wykhs")
+region = Rect2(512, 792, 256, 264)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mwmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mlv2")
+}],
+"loop": false,
+"name": &"candle_off",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ss1k")
+}],
+"loop": false,
+"name": &"candle_on",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hh1ib"]
+radius = 44.0
+height = 176.0
+
+[node name="DungeonCandleHigh1" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fwqov")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3mwmq")
+animation = &"candle_on"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-13, -29, -19, -5, -13, 13, 7, 19, 14, -4, 13, -21)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -41)
+scale = Vector2(1.64, 2.84)
+energy = 1.96
+texture = ExtResource("2_nmx05")
+
+[node name="CandleSwitchArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CandleSwitchArea2D"]
+shape = SubResource("CapsuleShape2D_hh1ib")
+
+[connection signal="body_entered" from="CandleSwitchArea2D" to="." method="_on_candle_switch_area_2d_body_entered"]
+[connection signal="body_exited" from="CandleSwitchArea2D" to="." method="_on_candle_switch_area_2d_body_exited"]

@@ -10,7 +10,7 @@ extends Control
 var opened_container : Control
 
 
-func _ready():
+func _ready() -> void:
 	tabs.set_tab_hidden(0, true)
 	tabs.current_tab = 1
 	for i in tab_icons.size():

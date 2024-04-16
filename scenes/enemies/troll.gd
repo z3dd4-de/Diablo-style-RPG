@@ -8,12 +8,12 @@ var is_alive: bool
 @export var health: HealthComponent
 
 
-func _init():
+func _init() -> void:
 	is_alive = true
 	direction = "_w"
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	$HealthBar.value = health.current_health
 	if velocity.length() > 0:
 		action = "running"
@@ -25,7 +25,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func get_direction():
+func get_direction() -> void:
 	if velocity.x < 0:
 		if velocity.y < 0:
 			direction = "_nw"
@@ -47,6 +47,6 @@ func get_direction():
 			direction = "_se"
 
 
-func play_animation():
+func play_animation() -> void:
 	var animation = action + direction
 	$AnimatedSprite2D.play(animation)

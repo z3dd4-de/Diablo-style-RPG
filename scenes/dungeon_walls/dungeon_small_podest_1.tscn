@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://667foxpgmm10"]
+
+[ext_resource type="Texture2D" uid="uid://calw8gksi8nkg" path="res://sprites/twilight-dungeons/twilight-dungeons-objects-tileset.png" id="1_45mip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ga6y"]
+atlas = ExtResource("1_45mip")
+region = Rect2(256, 264, 256, 264)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_075xb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ga6y")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="DungeonSmallPodest1" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -46)
+sprite_frames = SubResource("SpriteFrames_075xb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-70, 16, -24, 37, 69, -7, 71, -28, 26, -50, -70, -3)

@@ -4,6 +4,7 @@ class_name Message extends CanvasLayer
 
 func _ready() -> void:
 	Globals.SendMessage.connect(show_message)
+	Globals.CloseMessage.connect(close_message)
 
 
 func _on_timer_timeout() -> void:
@@ -14,3 +15,8 @@ func show_message(text: String) -> void:
 	self.visible = true
 	messageText.text = text
 	$Timer.start()
+
+
+func close_message() -> void:
+	$Timer.stop()
+	self.visible = false

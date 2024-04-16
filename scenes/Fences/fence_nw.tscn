@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://5qcph351qn8x"]
+
+[ext_resource type="Texture2D" uid="uid://cwq4t2pdgrepo" path="res://sprites/environment/graveyard.png" id="1_sthys"]
+
+[node name="FenceNW" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sthys")
+region_enabled = true
+region_rect = Rect2(289.329, 0, 99.0396, 118.053)

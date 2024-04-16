@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://cwcraaekvx7rq"]
+
+[ext_resource type="Texture2D" uid="uid://8sl5gfl11p7x" path="res://sprites/twilight-dungeons/twilight-dungeons-structure-tileset.png" id="1_3toj3"]
+[ext_resource type="Script" path="res://scenes/dungeon_walls/dungeon_gate.gd" id="1_euaq1"]
+[ext_resource type="Texture2D" uid="uid://calw8gksi8nkg" path="res://sprites/twilight-dungeons/twilight-dungeons-objects-tileset.png" id="2_gbcdx"]
+[ext_resource type="Texture2D" uid="uid://dmhk66gv4ghec" path="res://sprites/environment/candle_light.png" id="4_eta4s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n2bq"]
+atlas = ExtResource("1_3toj3")
+region = Rect2(768, 1056, 256, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vaxx"]
+atlas = ExtResource("1_3toj3")
+region = Rect2(256, 1056, 256, 264)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vurkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n2bq")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vaxx")
+}],
+"loop": false,
+"name": &"opened",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64r7w"]
+atlas = ExtResource("2_gbcdx")
+region = Rect2(512, 528, 256, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6gek"]
+atlas = ExtResource("2_gbcdx")
+region = Rect2(768, 528, 256, 132)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5j0ku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64r7w")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6gek")
+}],
+"loop": false,
+"name": &"opened",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yq8wc"]
+radius = 40.0
+height = 144.0
+
+[node name="DungeonGate2" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_euaq1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vurkn")
+animation = &"closed"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3toj3")
+region_enabled = true
+region_rect = Rect2(300.37, 1083.56, 166.376, 214.292)
+
+[node name="OpenGateCollision" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OpenGateCollision"]
+polygon = PackedVector2Array(-69, 5, -69, 29, -47, 40, -40, 36, -42, 10)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="OpenGateCollision"]
+polygon = PackedVector2Array(31, 54, 32, 80, 59, 91, 67, 88, 67, 61)
+
+[node name="ClosedGateCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-69, 8, -69, 17, 59, 79, 68, 75, 69, 60, -70, 1)
+
+[node name="CandleSwitch" type="AnimatedSprite2D" parent="."]
+position = Vector2(50, 63)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5j0ku")
+animation = &"closed"
+
+[node name="Area2D" type="Area2D" parent="CandleSwitch"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CandleSwitch/Area2D"]
+position = Vector2(-24, 14)
+shape = SubResource("CapsuleShape2D_yq8wc")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 11
+y_sort_enabled = true
+position = Vector2(42, 52)
+energy = 3.09
+texture = ExtResource("4_eta4s")
+
+[connection signal="body_entered" from="CandleSwitch/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CandleSwitch/Area2D" to="." method="_on_area_2d_body_exited"]

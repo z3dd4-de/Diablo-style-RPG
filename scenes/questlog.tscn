@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs8ey2wm4ippc"]
+
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="1_2dld0"]
+[ext_resource type="Script" path="res://scripts/questlog.gd" id="1_aonwe"]
+
+[node name="Questlog" type="Control"]
+process_mode = 2
+z_index = 20
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_aonwe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -456.5
+offset_top = -256.0
+offset_right = 456.5
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2dld0")
+
+[node name="Current Quests" type="MarginContainer" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/TabContainer/Current Quests"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/TabContainer/Current Quests/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+item_count = 1
+item_0/text = "Quest 1"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Current Quests/HSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Test"
+
+[node name="Completed Quests" type="Panel" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_2dld0")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/TabContainer/Completed Quests"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/TabContainer/Completed Quests/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+item_count = 1
+item_0/text = "Quest 1"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Completed Quests/HSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Test"
+fit_content = true
+
+[node name="Misc" type="Panel" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_2dld0")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/TabContainer/Misc"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/TabContainer/Misc/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+item_count = 2
+item_0/text = "Teacher"
+item_1/text = "Merchands"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Misc/HSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Test"
+fit_content = true

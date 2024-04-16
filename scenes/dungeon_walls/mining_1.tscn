@@ -1,0 +1,126 @@
+[gd_scene load_steps=20 format=3 uid="uid://snxd7fwce3h4"]
+
+[ext_resource type="Texture2D" uid="uid://xtngifagharu" path="res://sprites/grassland_tiles/grassland_tiles.png" id="1_qm2jq"]
+[ext_resource type="Script" path="res://scripts/mining.gd" id="1_t00ib"]
+[ext_resource type="PackedScene" uid="uid://cejqdb7jkd2o2" path="res://addons/wyvernbox_prefabs/inventories/inventory.tscn" id="2_mq3dr"]
+[ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="3_rn6wk"]
+[ext_resource type="Resource" uid="uid://ci4mknpja00wt" path="res://example/wyvernbox/item_types/materials/metalscrap_gold.tres" id="4_15rf6"]
+[ext_resource type="Resource" uid="uid://yv01djbvah0i" path="res://example/wyvernbox/item_types/materials/metalscrap_copper.tres" id="5_80h00"]
+[ext_resource type="Resource" uid="uid://c8gdxqqb85pht" path="res://example/wyvernbox/item_types/materials/metalscrap_iron.tres" id="6_pu0da"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="7_jmvqc"]
+[ext_resource type="Resource" uid="uid://bje7mm1871eu4" path="res://example/wyvernbox/item_types/materials/leather.tres" id="7_s2rle"]
+[ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="9_ccs8a"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="10_25xi0"]
+[ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="16_10bp4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tywtv"]
+atlas = ExtResource("1_qm2jq")
+region = Rect2(0, 864, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7inrb"]
+atlas = ExtResource("1_qm2jq")
+region = Rect2(192, 864, 96, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unt34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tywtv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7inrb")
+}],
+"loop": false,
+"name": &"extended",
+"speed": 0.0
+}]
+
+[sub_resource type="Resource" id="Resource_fbi7e"]
+script = ExtResource("7_jmvqc")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("4_15rf6"), ExtResource("5_80h00"), ExtResource("6_pu0da"), ExtResource("7_s2rle")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 20), Vector2(1, 20), Vector2(1, 20), Vector2(1, 20)])
+item_chances = Array[float]([10.0, 30.0, 80.0, 30.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnyc7"]
+bg_color = Color(0, 0, 0, 0.752941)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gg2fx"]
+content_margin_left = 2.0
+content_margin_top = 5.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.411765, 0.411765, 0.411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ibr3l"]
+content_margin_left = 0.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[node name="Mining1" type="StaticBody2D"]
+script = ExtResource("1_t00ib")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_unt34")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-36, -14, -28, 43, 30, 12, 23, -41)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-29, 16, -44, 71, 25, 64, 63, 32, 68, 2, 23, -1)
+
+[node name="Inventory" parent="." instance=ExtResource("2_mq3dr")]
+visible = false
+offset_left = -70.0
+offset_top = -30.0
+offset_right = 70.0
+offset_bottom = 38.0
+contents = SubResource("Resource_fbi7e")
+selected_item_style = ExtResource("3_rn6wk")
+
+[node name="Tooltip" parent="." instance=ExtResource("9_ccs8a")]
+visible = false
+offset_left = -56.0
+offset_top = 44.0
+offset_right = 224.0
+offset_bottom = 174.0
+scale = Vector2(0.4, 0.4)
+theme = ExtResource("10_25xi0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnyc7")
+nameplate_panel = SubResource("StyleBoxFlat_gg2fx")
+desc_panel = SubResource("StyleBoxEmpty_ibr3l")
+back_panel = SubResource("StyleBoxFlat_nnyc7")
+
+[node name="Item" parent="." instance=ExtResource("16_10bp4")]
+offset_left = -74.0
+offset_top = -33.0
+offset_bottom = 42.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

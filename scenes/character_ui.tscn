@@ -1,0 +1,1324 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8jjpb08aklbv"]
+
+[ext_resource type="FontFile" uid="uid://cm5bbk17cbbsr" path="res://fonts/vinque rg.otf" id="1_u5g0q"]
+[ext_resource type="Script" path="res://scripts/gui/character_ui.gd" id="1_yrtb5"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="2_23gu8"]
+
+[node name="CharacterUI" type="Control"]
+process_mode = 3
+visible = false
+z_index = 100
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yrtb5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+offset_left = 7.0
+offset_right = 954.0
+offset_bottom = 515.0
+theme_override_fonts/font = ExtResource("1_u5g0q")
+current_tab = 3
+
+[node name="Overview" type="RichTextLabel" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Overview"]
+layout_mode = 0
+offset_right = 878.0
+offset_bottom = 418.0
+
+[node name="PhysicalLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Overview/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_u5g0q")
+text = "General Overview"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/TabContainer/Overview/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Level        "
+
+[node name="LevelInt" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "1 "
+horizontal_alignment = 1
+
+[node name="ExpLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Experience
+"
+
+[node name="ExpInt" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "680"
+horizontal_alignment = 1
+
+[node name="NextLevelLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Next Level"
+
+[node name="NextLevelHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="ClassLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Class"
+
+[node name="CurrentClassLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Fighter, Archery, Mage"
+horizontal_alignment = 1
+
+[node name="SkillPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Skill Points"
+
+[node name="SkillPointsInt" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "10"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Name"
+
+[node name="PlayerNameLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "<_PLAYER_NAME>
+"
+horizontal_alignment = 1
+
+[node name="LifePointsLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Health Points"
+
+[node name="LifePointsStr" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "100/100"
+horizontal_alignment = 1
+
+[node name="EmptyLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Overview/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_u5g0q")
+scroll_active = false
+
+[node name="GridContainer2" type="GridContainer" parent="CanvasLayer/TabContainer/Overview/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="GeneralInfoLabel" type="Label" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "General Info            "
+
+[node name="GeneralInfoRichtTextLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_23gu8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Test
+1
+2
+3"
+
+[node name="Character" type="RichTextLabel" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Character"]
+layout_mode = 0
+offset_right = 878.0
+offset_bottom = 418.0
+
+[node name="PhysicalLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_u5g0q")
+text = "Physical skills"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="StrengthLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Strength        "
+
+[node name="StrengthHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+rounded = true
+
+[node name="StrengthPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "10/10"
+
+[node name="StrengthDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Defines how much damage you can take."
+
+[node name="AgilityLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Agility"
+
+[node name="AgilityHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="AgilityPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "10/10"
+
+[node name="AgilityDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Agility is used to fight with the bow."
+
+[node name="SpiritLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Spirit"
+
+[node name="SpiritHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="SpiritPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "10/10"
+
+[node name="SpiritDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Needed to cast magic spells."
+
+[node name="LifePointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Life points
+"
+
+[node name="LifePointsHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="LifePointsPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "100/100"
+
+[node name="LifePointsDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "If 0, the character dies."
+
+[node name="WeaponSkillsLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_u5g0q")
+text = "Weapon skills"
+
+[node name="GridContainer2" type="GridContainer" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="MeleeLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Melee            "
+
+[node name="MeleeHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="MeleePointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "+10"
+
+[node name="MeleeDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Damage added to melee weapons.                "
+
+[node name="BowLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Bow"
+
+[node name="BowHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="BowPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "10%"
+
+[node name="BowDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "The higher, the more critical hits."
+
+[node name="BlockLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Block"
+
+[node name="BlockHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="BlockPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "10%"
+
+[node name="BlockDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Probability to block critical hits."
+
+[node name="MagicLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Magic"
+
+[node name="MagicHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="MagicPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+
+[node name="MagicDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Needed to use magic weapons."
+
+[node name="DaggerKillLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Dagger-Kill"
+
+[node name="DaggerKillHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="DaggerKillPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+
+[node name="DaggerKillDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Thief only: kills oponent instantly."
+
+[node name="CharacterSkillsLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_u5g0q")
+text = "Character skills"
+
+[node name="GridContainer3" type="GridContainer" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="MiningLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Mining"
+
+[node name="MiningHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="MiningPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0%"
+
+[node name="MiningDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Probability to find rare items during mining."
+
+[node name="CraftingLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Crafting"
+
+[node name="CraftingHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="CraftingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0%"
+
+[node name="CraftingDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Higher skills required for higher recipes."
+
+[node name="ResistHungerLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Resist hunger"
+
+[node name="ResistHungerHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="ResistHungerPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0%"
+
+[node name="ResistHungerDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "It takes longer to get really hungry."
+
+[node name="ResistThirstLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Resist thirst"
+
+[node name="ResistThirstHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+
+[node name="ResistThirstPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0%"
+
+[node name="ResistThirstDescr" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "It takes longer to get really thirsty."
+
+[node name="GridContainer4" type="GridContainer" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="EmptyLabel1" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_u5g0q")
+horizontal_alignment = 1
+
+[node name="EmptyLabel2" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_u5g0q")
+horizontal_alignment = 1
+
+[node name="RemainingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_u5g0q")
+theme_override_font_sizes/font_size = 30
+text = "Remaining skill points:"
+horizontal_alignment = 1
+
+[node name="SkillPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_u5g0q")
+theme_override_font_sizes/font_size = 30
+text = "<skill_points>"
+horizontal_alignment = 1
+
+[node name="SaveDescrLabel" type="Label" parent="CanvasLayer/TabContainer/Character/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_23gu8")
+theme_override_font_sizes/font_size = 17
+text = "Press \"C\" so save changes, \"ESC\" to quit without changes."
+
+[node name="Knowledge" type="RichTextLabel" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Knowledge"]
+layout_mode = 0
+offset_right = 947.0
+offset_bottom = 485.0
+
+[node name="GeneralSkillsLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_u5g0q")
+text = "General skills"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="CraftingLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Crafting        "
+
+[node name="CraftingLMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="CraftingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="CraftingDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Your crafting level."
+
+[node name="CookingLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Cooking        "
+
+[node name="CookingMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="CookingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="CookingDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Your cooking level."
+
+[node name="VendorLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Vendor        "
+
+[node name="VendorMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="VendorPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="VendorDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Determines how much you get for goods.   "
+
+[node name="AlchemyLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Alchemy        "
+
+[node name="AlchemyMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="AlchemyPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="AlchemyDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "What portions can be brewed."
+
+[node name="BlacksmithLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Blacksmith        "
+
+[node name="BlacksmithMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="BlacksmithPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="BlacksmithDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "What level of weapons can be built."
+
+[node name="RepairLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Repair        "
+
+[node name="RepairMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="RepairPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="RepairDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "How good is the equipment when needed."
+
+[node name="ArrowsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Arrows        "
+
+[node name="ArrowsMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="ArrowsPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="ArrowsDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Needed for advanced arrows."
+
+[node name="HealingLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Healing        "
+
+[node name="HealingMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="HealingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="HealingDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Determines your refresh rate."
+
+[node name="PersonalityLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Personality        "
+
+[node name="PersonalityMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="PersonalityPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="PersonalityDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "How much you can influence others."
+
+[node name="CastingLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Casting        "
+
+[node name="CastingMenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="CastingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="CastingDescr" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Your casting level."
+
+[node name="GridContainer4" type="GridContainer" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="EmptyLabel1" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_u5g0q")
+horizontal_alignment = 1
+
+[node name="EmptyLabel2" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_u5g0q")
+horizontal_alignment = 1
+
+[node name="RemainingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_u5g0q")
+theme_override_font_sizes/font_size = 30
+text = "Remaining skill points:"
+horizontal_alignment = 1
+
+[node name="SkillPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_u5g0q")
+theme_override_font_sizes/font_size = 30
+text = "<skill_points>"
+horizontal_alignment = 1
+
+[node name="SaveDescrLabel" type="Label" parent="CanvasLayer/TabContainer/Knowledge/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_23gu8")
+theme_override_font_sizes/font_size = 17
+text = "Press \"C\" so save changes, \"ESC\" to quit without changes"
+
+[node name="Books" type="RichTextLabel" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Books"]
+layout_mode = 0
+offset_right = 948.0
+offset_bottom = 485.0
+
+[node name="WeaponSkillsLabel" type="RichTextLabel" parent="CanvasLayer/TabContainer/Books/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_u5g0q")
+text = "These books where written to help you on your path."
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/TabContainer/Books/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="CraftingLabel" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Book of Crafting        "
+
+[node name="MenuButton" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel3" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel4" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Crafting"
+
+[node name="StrengthLabel6" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Don't burn yourself!        "
+
+[node name="MenuButton2" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel7" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel8" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Cooking"
+
+[node name="StrengthLabel9" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Merch for Beginners"
+
+[node name="MenuButton3" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel10" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel11" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Vendor"
+
+[node name="StrengthLabel12" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Drinks and Donts        "
+
+[node name="MenuButton4" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel13" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel14" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Alchemy"
+
+[node name="StrengthLabel15" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Get a knife, boy!        "
+
+[node name="MenuButton5" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel16" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel17" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Blacksmith"
+
+[node name="StrengthLabel18" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Second Hand Use "
+
+[node name="MenuButton6" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel19" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel20" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Repair"
+
+[node name="StrengthLabel21" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Arrows for Beginners  "
+
+[node name="MenuButton7" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel22" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel23" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Arrows"
+
+[node name="StrengthLabel24" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Medcine for Beginners        "
+
+[node name="MenuButton8" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel25" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel26" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Healing"
+
+[node name="StrengthLabel27" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Giude to YOUR Personality        "
+
+[node name="MenuButton9" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel28" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel29" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Personality"
+
+[node name="StrengthLabel30" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Spellbook"
+
+[node name="MenuButton10" type="OptionButton" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+popup/item_0/text = "Bascis (5 LP)"
+popup/item_0/id = 0
+popup/item_1/text = "Better Basics (10 LP)"
+popup/item_1/id = 1
+popup/item_2/text = "Advanced (15 LP)"
+popup/item_2/id = 2
+popup/item_3/text = "Master (20 LP)"
+popup/item_3/id = 3
+popup/item_4/text = "Expert (30 LP)"
+popup/item_4/id = 4
+
+[node name="StrengthLabel31" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "0"
+horizontal_alignment = 1
+
+[node name="StrengthLabel32" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_u5g0q")
+text = "Some basics. +5 Casting"
+
+[node name="GridContainer4" type="GridContainer" parent="CanvasLayer/TabContainer/Books/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="EmptyLabel1" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_u5g0q")
+horizontal_alignment = 1
+
+[node name="EmptyLabel2" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_u5g0q")
+horizontal_alignment = 1
+
+[node name="RemainingPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_u5g0q")
+theme_override_font_sizes/font_size = 30
+text = "Remaining skill points:"
+horizontal_alignment = 1
+
+[node name="SkillPointsLabel" type="Label" parent="CanvasLayer/TabContainer/Books/VBoxContainer/GridContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_u5g0q")
+theme_override_font_sizes/font_size = 30
+text = "<skill_points>"
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer/StrengthHSlider" to="." method="_on_strength_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer/AgilityHSlider" to="." method="_on_agility_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer/SpiritHSlider" to="." method="_on_spirit_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer/LifePointsHSlider" to="." method="_on_life_points_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2/MeleeHSlider" to="." method="_on_melee_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2/BowHSlider" to="." method="_on_bow_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2/BlockHSlider" to="." method="_on_block_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2/MagicHSlider" to="." method="_on_magic_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer2/DaggerKillHSlider" to="." method="_on_dagger_kill_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3/MiningHSlider" to="." method="_on_mining_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3/CraftingHSlider" to="." method="_on_crafting_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3/ResistHungerHSlider" to="." method="_on_resist_hunger_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Character/VBoxContainer/GridContainer3/ResistThirstHSlider" to="." method="_on_resist_thirst_h_slider_value_changed"]

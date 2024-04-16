@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://be68citslqpuy"]
+[gd_scene load_steps=6 format=3 uid="uid://be68citslqpuy"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_nvnpl"]
 [ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="1_oswe7"]
 [ext_resource type="Texture2D" uid="uid://d2oecdcljtdxm" path="res://sprites/menu/ancient-parchment.png" id="2_upfhq"]
 [ext_resource type="AudioStream" uid="uid://c5uqlcbfc1oi2" path="res://sounds/sonatina_letsadventure_1ATaleForTheJourney.ogg" id="4_55u2w"]
+[ext_resource type="AudioStream" uid="uid://b25evjojd7am8" path="res://sounds/scary-laugh.mp3" id="5_bdvt2"]
 
 [node name="MainMenu" type="Node2D"]
+z_index = 9
+y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_nvnpl")
 
@@ -32,7 +35,7 @@ offset = Vector2(300, 40)
 scale = Vector2(0.5, 0.5)
 transform = Transform2D(0.5, 0, 0, 0.5, 300, 40)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="MainVBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.121
 anchor_top = 0.5
@@ -46,35 +49,35 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="StartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CanvasLayer/MainVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_oswe7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Start Game"
 
-[node name="LoadButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="LoadButton" type="Button" parent="CanvasLayer/MainVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_oswe7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Load Game"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="CanvasLayer/MainVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_oswe7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Options"
 
-[node name="CreditsButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MainVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_oswe7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Credits"
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="CanvasLayer/MainVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_oswe7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -114,12 +117,126 @@ theme = ExtResource("1_oswe7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Version 1.0"
 
+[node name="OptionsVBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 182.0
+offset_top = 322.0
+offset_right = 579.0
+offset_bottom = 488.0
+
+[node name="AudioButton" type="Button" parent="CanvasLayer/OptionsVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Audio Options"
+
+[node name="VideoButton" type="Button" parent="CanvasLayer/OptionsVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Video Options"
+
+[node name="OptionsBackButton" type="Button" parent="CanvasLayer/OptionsVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
+[node name="AudioVBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+offset_left = -112.0
+offset_top = 286.0
+offset_right = 862.0
+offset_bottom = 616.0
+
+[node name="Label" type="Label" parent="CanvasLayer/AudioVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 60
+text = "Audio Options"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/AudioVBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="CanvasLayer/AudioVBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.992157, 0.992157, 0.992157, 1)
+theme_override_font_sizes/font_size = 60
+text = "Master Volume"
+
+[node name="MasterHSlider" type="HSlider" parent="CanvasLayer/AudioVBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/AudioVBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.992157, 0.992157, 0.992157, 1)
+theme_override_font_sizes/font_size = 60
+text = "Music Volume"
+
+[node name="MusicHSlider" type="HSlider" parent="CanvasLayer/AudioVBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="EffectsLabel" type="Label" parent="CanvasLayer/AudioVBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.992157, 0.992157, 0.992157, 1)
+theme_override_font_sizes/font_size = 60
+text = "Effects Volume"
+
+[node name="EffectsHSlider" type="HSlider" parent="CanvasLayer/AudioVBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="AudioBackButton" type="Button" parent="CanvasLayer/AudioVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oswe7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_55u2w")
 autoplay = true
+bus = &"Music"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="AudioStreamPlayer2D_Sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bdvt2")
+bus = &"SFX"
+
+[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainVBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/OptionsVBoxContainer/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/OptionsVBoxContainer/OptionsBackButton" to="." method="_on_options_back_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer/AudioVBoxContainer/GridContainer/MasterHSlider" to="." method="_on_master_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/AudioVBoxContainer/GridContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/AudioVBoxContainer/GridContainer/EffectsHSlider" to="." method="_on_effects_h_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/AudioVBoxContainer/AudioBackButton" to="." method="_on_audio_back_button_pressed"]

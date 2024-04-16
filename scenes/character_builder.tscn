@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj1nk5fae6y87"]
+
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="1_c07jk"]
+[ext_resource type="Script" path="res://scripts/gui/character_builder.gd" id="1_e0qm6"]
+[ext_resource type="PackedScene" uid="uid://drmsgh0hosdss" path="res://scenes/character_designer.tscn" id="2_mo8qr"]
+
+[node name="CharacterBuilder" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_e0qm6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1174.0
+offset_bottom = 746.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 594.0
+columns = 2
+
+[node name="TitleLabel" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_c07jk")
+text = "Create Hero         "
+
+[node name="ColorRect" type="ColorRect" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+color = Color(0.211765, 1, 0.117647, 1)
+
+[node name="CharacterDesigner" parent="Panel/GridContainer/ColorRect" instance=ExtResource("2_mo8qr")]
+position = Vector2(93, 55)
+scale = Vector2(2, 2)
+
+[node name="NameLabel" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+text = "Name"
+
+[node name="NameLineEdit" type="LineEdit" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClassLabel" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+text = "Class"
+
+[node name="ClassOptionButton" type="OptionButton" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+item_count = 4
+popup/item_0/text = "Fighter"
+popup/item_0/id = 0
+popup/item_1/text = "Archer"
+popup/item_1/id = 1
+popup/item_2/text = "Mage"
+popup/item_2/id = 2
+popup/item_3/text = "Thief"
+popup/item_3/id = 3
+
+[node name="ClassBonusLabel" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+text = "Bonus"
+
+[node name="ClassBonusOptionButton" type="OptionButton" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+item_count = 4
+popup/item_0/text = "2 Str, 1 Ag, 1 Bow, 1 Melee, 20 LP"
+popup/item_0/id = 0
+popup/item_1/text = "Archer"
+popup/item_1/id = 1
+popup/item_2/text = "Mage"
+popup/item_2/id = 2
+popup/item_3/text = "Thief"
+popup/item_3/id = 3
+
+[node name="HeadLabel" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+text = "Choose head"
+
+[node name="HeadOptionButton" type="OptionButton" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+item_count = 4
+selected = 0
+popup/item_0/text = "Head 1"
+popup/item_0/id = 0
+popup/item_1/text = "Head 2"
+popup/item_1/id = 1
+popup/item_2/text = "Head 3"
+popup/item_2/id = 2
+popup/item_3/text = "Head 4"
+popup/item_3/id = 3
+
+[node name="HistoryLabel" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_c07jk")
+text = "History
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/GridContainer"]
+layout_mode = 2
+
+[node name="HistoryLongText" type="RichTextLabel" parent="Panel"]
+layout_mode = 2
+offset_top = 332.0
+offset_right = 798.0
+offset_bottom = 614.0
+theme = ExtResource("1_c07jk")
+theme_override_font_sizes/normal_font_size = 25
+text = "Blablalbllalllall
+1
+2
+3
+4"
+
+[connection signal="item_selected" from="Panel/GridContainer/ClassOptionButton" to="." method="_on_class_option_button_item_selected"]

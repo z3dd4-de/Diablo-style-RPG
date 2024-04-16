@@ -1,7 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgdb6ef2j751y"]
+[gd_scene load_steps=18 format=3 uid="uid://cgdb6ef2j751y"]
 
 [ext_resource type="Script" path="res://scripts/crate.gd" id="1_km4ac"]
 [ext_resource type="Texture2D" uid="uid://cwq4t2pdgrepo" path="res://sprites/environment/graveyard.png" id="2_8xj5x"]
+[ext_resource type="AudioStream" uid="uid://bfu77p0qqvoge" path="res://sounds/chest_short.mp3" id="2_rbth7"]
+[ext_resource type="PackedScene" uid="uid://cejqdb7jkd2o2" path="res://addons/wyvernbox_prefabs/inventories/inventory.tscn" id="4_8wciw"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="5_624j4"]
+[ext_resource type="Resource" uid="uid://ci4mknpja00wt" path="res://example/wyvernbox/item_types/materials/metalscrap_gold.tres" id="6_2r1cx"]
+[ext_resource type="Resource" uid="uid://yv01djbvah0i" path="res://example/wyvernbox/item_types/materials/metalscrap_copper.tres" id="7_tmrp7"]
+[ext_resource type="Resource" uid="uid://c8gdxqqb85pht" path="res://example/wyvernbox/item_types/materials/metalscrap_iron.tres" id="8_2pjuy"]
+[ext_resource type="Resource" uid="uid://bje7mm1871eu4" path="res://example/wyvernbox/item_types/materials/leather.tres" id="9_6qr4h"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="10_05o75"]
+[ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="11_oe8w0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu5dn"]
 atlas = ExtResource("2_8xj5x")
@@ -33,8 +42,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ossh3"]
 size = Vector2(112, 92)
 
-[node name="Crate" type="Node2D"]
+[sub_resource type="Resource" id="Resource_vq8jy"]
+script = ExtResource("5_624j4")
+name = ""
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
+weights = Array[float]([1.0])
+count_ranges = Array[Vector2]([Vector2(1, 1)])
+
+[sub_resource type="Resource" id="Resource_xgfsp"]
+script = ExtResource("10_05o75")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("6_2r1cx"), ExtResource("7_tmrp7"), ExtResource("8_2pjuy"), ExtResource("9_6qr4h")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 20), Vector2(1, 20), Vector2(1, 20), Vector2(1, 20)])
+item_chances = Array[float]([10.0, 30.0, 80.0, 30.0])
+apply_to_all_results = SubResource("Resource_vq8jy")
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[node name="Crate" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_km4ac")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rbth7")
+volume_db = -15.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eq7j5")
@@ -45,3 +79,18 @@ animation = &"closed"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 23)
 shape = SubResource("RectangleShape2D_ossh3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-28, 14, -28, 36, -6, 46, 28, 30, 28, 10, 6, -2)
+
+[node name="Inventory" parent="." instance=ExtResource("4_8wciw")]
+visible = false
+offset_left = -70.0
+offset_top = -12.0
+offset_right = 73.0
+offset_bottom = 59.0
+contents = SubResource("Resource_xgfsp")
+selected_item_style = ExtResource("11_oe8w0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

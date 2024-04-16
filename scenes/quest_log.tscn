@@ -1,29 +1,145 @@
-[gd_scene load_steps=4 format=3 uid="uid://dney84xkqoh7l"]
+[gd_scene load_steps=28 format=3 uid="uid://dney84xkqoh7l"]
 
-[ext_resource type="Texture2D" uid="uid://brko0s03xpafq" path="res://sprites/inventory/book_sprite.png" id="1_17dqn"]
+[ext_resource type="Texture2D" uid="uid://cjfxlw2gs75r8" path="res://sprites/inventory/questbook/ebene16.png" id="1_1wvn7"]
+[ext_resource type="Script" path="res://scripts/quest_log.gd" id="1_7hp67"]
+[ext_resource type="Texture2D" uid="uid://dkkqmutrwdhmc" path="res://sprites/inventory/questbook/ebene17.png" id="2_wvhie"]
+[ext_resource type="Texture2D" uid="uid://bdqnjpi1tv05y" path="res://sprites/inventory/questbook/ebene18.png" id="3_hy0ar"]
+[ext_resource type="Texture2D" uid="uid://bhf1q4fdf0i2u" path="res://sprites/inventory/questbook/ebene19.png" id="4_j64n3"]
+[ext_resource type="Texture2D" uid="uid://dsbx7hxfxwprt" path="res://sprites/inventory/questbook/ebene20.png" id="5_2mvyv"]
+[ext_resource type="Texture2D" uid="uid://bbgkdhkij01gw" path="res://sprites/inventory/questbook/ebene01.png" id="6_sqbco"]
+[ext_resource type="Texture2D" uid="uid://bqjmdkrc2xwt8" path="res://sprites/inventory/questbook/ebene02.png" id="7_ro4ly"]
+[ext_resource type="Texture2D" uid="uid://g6ao74dhndcx" path="res://sprites/inventory/questbook/ebene03.png" id="8_jtpew"]
+[ext_resource type="Texture2D" uid="uid://do2iwl5gumhvl" path="res://sprites/inventory/questbook/ebene04.png" id="9_1oppx"]
+[ext_resource type="Texture2D" uid="uid://tn5rvyojo20c" path="res://sprites/inventory/questbook/ebene05.png" id="10_pgug8"]
+[ext_resource type="Texture2D" uid="uid://gjjhl4uouaxg" path="res://sprites/inventory/questbook/ebene06.png" id="11_uq7tj"]
+[ext_resource type="Texture2D" uid="uid://cigiwi2guvmh" path="res://sprites/inventory/questbook/ebene07.png" id="12_nds10"]
+[ext_resource type="Texture2D" uid="uid://tqqvt6h5bggn" path="res://sprites/inventory/questbook/ebene08.png" id="13_hhia7"]
+[ext_resource type="Texture2D" uid="uid://diqlpae2jsk8n" path="res://sprites/inventory/questbook/ebene09.png" id="14_n1bse"]
+[ext_resource type="Texture2D" uid="uid://bal736bacjtue" path="res://sprites/inventory/questbook/ebene10.png" id="15_8d0pm"]
+[ext_resource type="Texture2D" uid="uid://cvvtipvds16nq" path="res://sprites/inventory/questbook/ebene11.png" id="16_1xulg"]
+[ext_resource type="Texture2D" uid="uid://bqt8al1awrv6v" path="res://sprites/inventory/questbook/ebene12.png" id="17_p361x"]
+[ext_resource type="Texture2D" uid="uid://ccoo6thylhqdq" path="res://sprites/inventory/questbook/ebene13.png" id="18_q0kbl"]
+[ext_resource type="Texture2D" uid="uid://baf5k6sks6i7b" path="res://sprites/inventory/questbook/ebene14.png" id="19_kb0cs"]
+[ext_resource type="Texture2D" uid="uid://du148heym64ph" path="res://sprites/inventory/questbook/ebene15.png" id="20_jhkm5"]
+[ext_resource type="Texture2D" uid="uid://bajlilcnq134y" path="res://sprites/stone_arrow/arrow_button_idle..png" id="21_t7vmi"]
+[ext_resource type="Texture2D" uid="uid://bq020pe04g1x6" path="res://sprites/stone_arrow/arrow_button_active..png" id="22_kf567"]
+[ext_resource type="Texture2D" uid="uid://18xfhlcg4uso" path="res://sprites/stone_arrow/arrow_right_button_idle..png" id="23_0dfxu"]
+[ext_resource type="Texture2D" uid="uid://dfihtm6fntfwv" path="res://sprites/stone_arrow/arrow_right_button_active..png" id="24_qowwb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8t57y"]
-atlas = ExtResource("1_17dqn")
-region = Rect2(0, 0, 240, 263)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjduy"]
+atlas = ExtResource("6_sqbco")
+region = Rect2(0, 0, 350, 300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yioma"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8t57y")
+"texture": ExtResource("1_1wvn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wvhie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hy0ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j64n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2mvyv")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"close",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjduy")
+}],
+"loop": false,
+"name": &"front",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sqbco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ro4ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jtpew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1oppx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pgug8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uq7tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nds10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hhia7")
+}],
+"loop": false,
 "name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_n1bse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8d0pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1xulg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p361x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q0kbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kb0cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jhkm5")
+}],
+"loop": false,
+"name": &"turn_page",
 "speed": 5.0
 }]
 
 [node name="QuestLog" type="Node2D"]
+script = ExtResource("1_7hp67")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -55)
 sprite_frames = SubResource("SpriteFrames_yioma")
-animation = &"open"
+animation = &"turn_page"
+frame = 6
+frame_progress = 1.0
+
+[node name="LeftButton" type="TextureButton" parent="."]
+offset_left = -223.0
+offset_top = -15.0
+offset_right = 414.0
+offset_bottom = 293.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("21_t7vmi")
+texture_pressed = ExtResource("22_kf567")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 152.0
+offset_top = -14.0
+offset_right = 789.0
+offset_bottom = 294.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("23_0dfxu")
+texture_pressed = ExtResource("24_qowwb")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsqrm4xjrm0rw"]
+
+[ext_resource type="Texture2D" uid="uid://cwq4t2pdgrepo" path="res://sprites/environment/graveyard.png" id="1_out0e"]
+
+[node name="FenceCornerNE" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_out0e")
+region_enabled = true
+region_rect = Rect2(419.463, 129.245, 83.4176, 116.715)

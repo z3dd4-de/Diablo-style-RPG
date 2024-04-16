@@ -7,7 +7,11 @@ class_name NSceneManager
 @export var Scenes : Dictionary = {
 	"Menu": "res://scenes/main_menu.tscn",
 	"Credits": "res://scenes/credits.tscn",
-	"World 1": "res://scenes/world_1.tscn"
+	"Intro": "res://scenes/intro.tscn",
+	"World 1": "res://scenes/world_1.tscn",
+	"Graveyard": "res://scenes/graveyard.tscn",
+	"Dungeon_Graveyard": "res://scenes/dungeon_graveyard.tscn",
+	"EndGame": "res://scenes/end_game_screen.tscn"
 }
  
 # Alias of the currently selected scene

@@ -1,0 +1,94 @@
+[gd_scene load_steps=18 format=3 uid="uid://ppl7c2xe5bnk"]
+
+[ext_resource type="Script" path="res://scripts/crate.gd" id="1_o1g10"]
+[ext_resource type="Texture2D" uid="uid://xtngifagharu" path="res://sprites/grassland_tiles/grassland_tiles.png" id="1_r5wt5"]
+[ext_resource type="AudioStream" uid="uid://bfu77p0qqvoge" path="res://sounds/chest_short.mp3" id="2_fwrxt"]
+[ext_resource type="PackedScene" uid="uid://cejqdb7jkd2o2" path="res://addons/wyvernbox_prefabs/inventories/inventory.tscn" id="4_iyejt"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="5_pn7s0"]
+[ext_resource type="Resource" uid="uid://ci4mknpja00wt" path="res://example/wyvernbox/item_types/materials/metalscrap_gold.tres" id="6_e8sgm"]
+[ext_resource type="Resource" uid="uid://yv01djbvah0i" path="res://example/wyvernbox/item_types/materials/metalscrap_copper.tres" id="7_qxngt"]
+[ext_resource type="Resource" uid="uid://c8gdxqqb85pht" path="res://example/wyvernbox/item_types/materials/metalscrap_iron.tres" id="8_4ggs1"]
+[ext_resource type="Resource" uid="uid://bje7mm1871eu4" path="res://example/wyvernbox/item_types/materials/leather.tres" id="9_d3elh"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="10_g2k1r"]
+[ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="11_j52f0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tivns"]
+atlas = ExtResource("1_r5wt5")
+region = Rect2(128, 265, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyj8g"]
+atlas = ExtResource("1_r5wt5")
+region = Rect2(192, 265, 64, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfina"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tivns")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyj8g")
+}],
+"loop": false,
+"name": &"open",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1sfg"]
+size = Vector2(50, 48)
+
+[sub_resource type="Resource" id="Resource_18p1y"]
+script = ExtResource("5_pn7s0")
+name = ""
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
+weights = Array[float]([1.0])
+count_ranges = Array[Vector2]([Vector2(1, 1)])
+
+[sub_resource type="Resource" id="Resource_ib3b3"]
+script = ExtResource("10_g2k1r")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("6_e8sgm"), ExtResource("7_qxngt"), ExtResource("8_4ggs1"), ExtResource("9_d3elh")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 20), Vector2(1, 20), Vector2(1, 20), Vector2(1, 20)])
+item_chances = Array[float]([10.0, 30.0, 80.0, 30.0])
+apply_to_all_results = SubResource("Resource_18p1y")
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[node name="Crate3" type="StaticBody2D"]
+script = ExtResource("1_o1g10")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mfina")
+animation = &"closed"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_fwrxt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_s1sfg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, -6, -7, 0, -11, 5, -14, 13, -10, 17, -3, 17, 14, 13, 14, 4, 7, -8)
+
+[node name="Inventory" parent="." instance=ExtResource("4_iyejt")]
+visible = false
+offset_left = -72.0
+offset_top = -32.0
+offset_right = 71.0
+offset_bottom = 39.0
+contents = SubResource("Resource_ib3b3")
+selected_item_style = ExtResource("11_j52f0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

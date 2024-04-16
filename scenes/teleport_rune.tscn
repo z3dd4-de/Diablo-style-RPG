@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://geyd0guosnnw"]
+
+[ext_resource type="Script" path="res://scripts/teleport_rune.gd" id="1_2xwut"]
+[ext_resource type="Texture2D" uid="uid://codoqujgvaan2" path="res://sprites/environment/teleport_rune.png" id="1_mrv3e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8lke7"]
+radius = 18.0
+height = 36.0
+
+[node name="TeleportRune" type="StaticBody2D"]
+script = ExtResource("1_2xwut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mrv3e")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_8lke7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

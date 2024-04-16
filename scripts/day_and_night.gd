@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name DayNight extends Node2D
 
 enum state { DAY, NIGHT }
 var current_state = state.DAY

@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbto3nl2ot6n"]
+
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="1_oqjln"]
+
+[node name="HarvestPlant" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HarvestMenuButton" type="MenuButton" parent="CanvasLayer"]
+offset_right = 59.0
+offset_bottom = 27.0
+theme = ExtResource("1_oqjln")
+theme_override_font_sizes/font_size = 15
+text = "Harvest"
+
+[node name="MenuButton2" type="MenuButton" parent="CanvasLayer"]
+offset_left = 65.0
+offset_top = -2.0
+offset_right = 124.0
+offset_bottom = 25.0
+theme = ExtResource("1_oqjln")
+theme_override_font_sizes/font_size = 15
+text = "Seeds"
+
+[node name="MenuButton3" type="MenuButton" parent="CanvasLayer"]
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 124.0
+offset_bottom = 49.0
+theme = ExtResource("1_oqjln")
+theme_override_font_sizes/font_size = 15
+text = "Fruits"
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_right = 120.0
+offset_bottom = 50.0

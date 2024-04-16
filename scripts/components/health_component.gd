@@ -11,8 +11,6 @@ signal HealthChanged
 
 
 func _ready() -> void:
-	thirst = ThirstComponent.new()
-	hunger = HungerComponent.new()
 	current_health = max_health
 	thirst.ReduceHealth.connect(receive_damage)
 	hunger.ReduceHealth.connect(receive_damage)

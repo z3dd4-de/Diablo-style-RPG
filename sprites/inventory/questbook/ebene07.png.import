@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brko0s03xpafq"
-path="res://.godot/imported/book_sprite.png-409212ef3e97029cf039ae5a1f885a71.ctex"
+uid="uid://cigiwi2guvmh"
+path="res://.godot/imported/ebene07.png-c1d85ddba8b2a624ead1ef9c233cffb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/inventory/book_sprite.png"
-dest_files=["res://.godot/imported/book_sprite.png-409212ef3e97029cf039ae5a1f885a71.ctex"]
+source_file="res://sprites/inventory/questbook/ebene07.png"
+dest_files=["res://.godot/imported/ebene07.png-c1d85ddba8b2a624ead1ef9c233cffb0.ctex"]
 
 [params]
 
