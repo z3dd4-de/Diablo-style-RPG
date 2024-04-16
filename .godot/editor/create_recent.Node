@@ -1,3 +1,7 @@
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+CharacterBody2D
 OptionButton
 RichTextLabel
 LineEdit
@@ -7,8 +11,4 @@ Label
 GridContainer
 Panel
 Control
-AnimatedSprite2D
 Button
-MenuButton
-CanvasLayer
-VBoxContainer

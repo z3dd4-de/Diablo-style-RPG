@@ -1,3 +1,5 @@
+res://scenes/enemies
+res://sprites/animals
 res://scripts/gui
 res://scripts
 res://scenes
@@ -18,5 +20,3 @@ res://themes
 res://sprites/menu
 res://shaders
 res://fonts
-res://scenes/enemies
-res://scripts/state_machine

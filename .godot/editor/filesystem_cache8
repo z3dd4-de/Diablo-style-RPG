@@ -420,8 +420,8 @@ troll-idle-noises.ogg::AudioStreamOggVorbis::3037429226008013182::1710287664::17
 troll-roars.ogg::AudioStreamOggVorbis::8561089861217307072::1710287651::1710288417::1::::<><>::
 vogel-im-wald-und-kroten-am-teich.mp3::AudioStreamMP3::6881404100124228677::1703086039::1709593939::1::::<><>::
 ::res://sprites/::1711863591
-::res://sprites/animals/::1713256277
-deer.png::CompressedTexture2D::7012789705300629705::1713256277::1713256441::1::::<><>::
+::res://sprites/animals/::1713257364
+deer.png::CompressedTexture2D::7012789705300629705::1713257364::1713257368::1::::<><>::
 horse_paint.png::CompressedTexture2D::1175513751055254764::1710096886::1710101335::1::::<><>::
 ::res://sprites/arrow/::1710678047
 left_arrow.png::CompressedTexture2D::6074615261498440811::1709582000::1710678047::1::::<><>::
