@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ux8aq6molcfr"]
+[gd_scene load_steps=27 format=3 uid="uid://ux8aq6molcfr"]
 
 [ext_resource type="Script" path="res://scripts/world_1.gd" id="1_la3x2"]
 [ext_resource type="Texture2D" uid="uid://xtngifagharu" path="res://sprites/grassland_tiles/grassland_tiles.png" id="1_p32aa"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://geyd0guosnnw" path="res://scenes/teleport_rune.tscn" id="17_frckf"]
 [ext_resource type="PackedScene" uid="uid://snxd7fwce3h4" path="res://scenes/dungeon_walls/mining_1.tscn" id="18_7t1gw"]
 [ext_resource type="PackedScene" uid="uid://k0500k0qhn7n" path="res://scenes/teleport_activator.tscn" id="18_clai2"]
+[ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="20_wuqd4"]
+[ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="20_xhxs2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86opu"]
 texture = ExtResource("1_p32aa")
@@ -550,3 +552,8 @@ position = Vector2(238, 45)
 stream = ExtResource("14_t6g1x")
 autoplay = true
 bus = &"Music"
+
+[node name="Tooltip" parent="." instance=ExtResource("20_wuqd4")]
+visible = false
+
+[node name="Item" parent="." instance=ExtResource("20_xhxs2")]

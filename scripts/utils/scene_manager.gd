@@ -7,6 +7,7 @@ class_name NSceneManager
 @export var Scenes : Dictionary = {
 	"Menu": "res://scenes/main_menu.tscn",
 	"Credits": "res://scenes/credits.tscn",
+	"CharacterBuilder": "res://scenes/character_builder.tscn",
 	"Intro": "res://scenes/intro.tscn",
 	"World 1": "res://scenes/world_1.tscn",
 	"Graveyard": "res://scenes/graveyard.tscn",

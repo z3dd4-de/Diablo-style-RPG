@@ -725,6 +725,7 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_df6f4")
 
 [node name="BodyClothes" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_xwg3k")
 
 [node name="MaleHead2" type="AnimatedSprite2D" parent="."]
@@ -736,6 +737,7 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_vwrfd")
 
 [node name="FemaleHead" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_4uj57")
 
 [node name="FighterSword" type="AnimatedSprite2D" parent="."]
@@ -755,8 +757,10 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_3yxpc")
 
 [node name="Longbow" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_8i5hj")
 
 [node name="Dagger" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_6sgyi")
+frame_progress = 0.579594

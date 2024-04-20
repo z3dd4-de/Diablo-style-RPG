@@ -1,4 +1,4 @@
-extends Node2D
+class_name CharacterEditor extends Node2D
 
 enum hero_class { FIGHTER, MAGE, THIEF, ARCHER }
 enum head { HEAD1, HEAD2, HEAD3, HEAD4 }

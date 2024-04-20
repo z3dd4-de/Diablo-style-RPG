@@ -1,4 +1,4 @@
-extends Control
+class_name CharacterUI extends Control
 
 var points: int
 var strength: int
@@ -19,7 +19,6 @@ var show_points: int
 var saving_possible: bool = false
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#DEBUG ONLY:
 	Globals.current_experience = 450
@@ -43,6 +42,8 @@ func _input(event) -> void:
 
 
 func _load_overview() -> void:
+	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/PlayerNameLabel.text = Globals.player_name
+	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer2/GeneralInfoRichtTextLabel.text = Globals.current_descr
 	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/LevelInt.text = str(Globals.current_level)
 	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/ExpInt.text = str(Globals.current_experience)
 	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/NextLevelHSlider.min_value = Globals.min_level_exp

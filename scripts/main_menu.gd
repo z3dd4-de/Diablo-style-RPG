@@ -26,7 +26,7 @@ func get_version() -> String:
 
 
 func _on_start_button_pressed() -> void:
-	SceneManager.SwitchScene("Intro")
+	SceneManager.SwitchScene("CharacterBuilder")
 
 
 func _on_load_button_pressed() -> void:

@@ -18,12 +18,16 @@ var end_time
 var started: bool = false
 
 var hero: Hero
+var player_name: String
 var current_experience: int = 0 
 var current_level: int = 1
 var current_skill_points: int = 20
 var min_level_exp: int = 0
 var max_level_exp: int = 0
-var current_class: String = "Fighter"
+var current_class: String = "Thief"
+var current_head: int = 0
+var basic_health: int = 100
+
 var current_descr: String = "You already learned a little bit at the military academy where you studied:
 	+2 Strength, +1 Agility, +1 Bow, +1 Melee, +20 Life Points"
 
@@ -45,7 +49,7 @@ var p_menu_visible: bool = false
 var c_menu
 var c_menu_visible: bool = false
 
-enum scene { WORLD1, INTRO, GRAVEYARD, GRAVEYARD_DUNGEON }
+enum scene { WORLD1, EDITOR, INTRO, GRAVEYARD, GRAVEYARD_DUNGEON }
 var current_scene
 
 # Teleports
@@ -57,6 +61,7 @@ enum gate_state { OPENED, CLOSED }
 var fountain_tutorial_message_shown: bool = false
 var tutorial_message_shown: bool = false
 
+#
 
 func _ready() -> void:
 	start_time = Time.get_unix_time_from_system()

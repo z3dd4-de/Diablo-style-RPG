@@ -7,6 +7,7 @@ extends Node2D
 func _ready() -> void:
 	Globals.create_keyboard_node()
 	Globals.create_pause_menu()
+	print("Player: " + Globals.player_name + " - " + Globals.current_class)
 	load_level()
 
 
