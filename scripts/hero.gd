@@ -110,10 +110,11 @@ func _physics_process(_delta) -> void:
 
 
 func _movement() -> void:
-	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-	move_direction.y = (int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))) / float(2)
-	velocity = move_direction.normalized() * SPEED
-	move_and_slide()
+	if !Globals.lock_shown:
+		move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+		move_direction.y = (int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))) / float(2)
+		velocity = move_direction.normalized() * SPEED
+		move_and_slide()
 
 
 func _switch_items() -> void:

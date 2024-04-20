@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://drmsgh0hosdss"]
+[gd_scene load_steps=112 format=3 uid="uid://drmsgh0hosdss"]
 
 [ext_resource type="Texture2D" uid="uid://83k6ayrnepoh" path="res://sprites/isometric_hero/male_head1.png" id="1_7250u"]
 [ext_resource type="Script" path="res://scripts/character_designer.gd" id="1_s436d"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cnwoyxvmu4a4f" path="res://sprites/isometric_hero/steel_armor.png" id="8_jhom8"]
 [ext_resource type="Texture2D" uid="uid://y0gmyenvu1s2" path="res://sprites/isometric_hero/greatstaff.png" id="9_f4ka2"]
 [ext_resource type="Texture2D" uid="uid://g7rr325mu6c1" path="res://sprites/isometric_hero/longbow.png" id="10_rs20l"]
+[ext_resource type="Texture2D" uid="uid://hx5ywl7gej8c" path="res://sprites/isometric_hero/dagger.png" id="12_v243l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmynk"]
 atlas = ExtResource("1_7250u")
@@ -652,6 +653,70 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kebj"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gudl"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggf4o"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6dwd"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6v7p"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kigm4"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04gsh"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 768, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvwgq"]
+atlas = ExtResource("12_v243l")
+region = Rect2(0, 896, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6sgyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kebj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gudl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggf4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6dwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6v7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kigm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04gsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvwgq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CharacterDesigner" type="Node2D"]
 script = ExtResource("1_s436d")
 
@@ -691,3 +756,7 @@ sprite_frames = SubResource("SpriteFrames_3yxpc")
 
 [node name="Longbow" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8i5hj")
+
+[node name="Dagger" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_6sgyi")

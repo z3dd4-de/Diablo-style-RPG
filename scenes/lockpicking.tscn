@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://ctjypsxuhxx3h"]
+
+[ext_resource type="Script" path="res://scripts/lockpicking.gd" id="1_sj00q"]
+[ext_resource type="Texture2D" uid="uid://dw3xd55b7psl2" path="res://sprites/lockpicking/broke.png" id="1_x4v1r"]
+[ext_resource type="Texture2D" uid="uid://b71s50t0ohin6" path="res://sprites/lockpicking/5/0.png" id="2_3oeaw"]
+[ext_resource type="Texture2D" uid="uid://dali0sakppyu6" path="res://sprites/lockpicking/5/1.1.png" id="3_3teb0"]
+[ext_resource type="Texture2D" uid="uid://tgw0j3e4qj7h" path="res://sprites/lockpicking/5/1.2.png" id="4_q1n8m"]
+[ext_resource type="Texture2D" uid="uid://eb22fw1l4xue" path="res://sprites/lockpicking/5/1.png" id="5_hubri"]
+[ext_resource type="Texture2D" uid="uid://by2aswiv57b1r" path="res://sprites/lockpicking/5/2.png" id="6_yux52"]
+[ext_resource type="Texture2D" uid="uid://bspr2p0gx45w7" path="res://sprites/lockpicking/5/3.png" id="7_i54y0"]
+[ext_resource type="Texture2D" uid="uid://bye2amq242xt7" path="res://sprites/lockpicking/5/4.png" id="8_0nsbt"]
+[ext_resource type="Texture2D" uid="uid://yp3ueupxui7r" path="res://sprites/lockpicking/5/5.png" id="9_lrvk6"]
+[ext_resource type="Texture2D" uid="uid://dklldgkw2cil2" path="res://sprites/lockpicking/5/6.png" id="10_g2ekm"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="11_rboeg"]
+[ext_resource type="AudioStream" uid="uid://rrr3lgftjmyw" path="res://sounds/Key Jiggle.wav" id="13_3213h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ehyl"]
+atlas = ExtResource("2_3oeaw")
+region = Rect2(0, 0, 280, 340)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86s1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x4v1r")
+}],
+"loop": false,
+"name": &"broke",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ehyl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3teb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q1n8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hubri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yux52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i54y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0nsbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lrvk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g2ekm")
+}],
+"loop": false,
+"name": &"turn",
+"speed": 5.0
+}]
+
+[node name="Lockpicking" type="Control"]
+visible = false
+z_index = 20
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -179.5
+offset_right = 163.0
+offset_bottom = 179.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sj00q")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 325.0
+offset_bottom = 356.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(162, 146)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_86s1c")
+animation = &"broke"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 3.5
+offset_top = 302.5
+offset_right = 312.5
+offset_bottom = 351.5
+theme = ExtResource("11_rboeg")
+theme_override_font_sizes/font_size = 18
+text = "Lockpicking:
+Press left or right to challange the lock!"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_3213h")
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

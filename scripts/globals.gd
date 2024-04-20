@@ -33,6 +33,9 @@ var current_descr: String = "You already learned a little bit at the military ac
 @onready var day_night = preload("res://scenes/day_and_night.tscn")
 @onready var char_menu = preload("res://scenes/character_ui.tscn")
 
+var lock_shown: bool
+var lock_id: int
+
 var q_log
 var q_log_visible: bool = false
 var keys_layout
@@ -73,6 +76,9 @@ func _ready() -> void:
 	c_menu = char_menu.instantiate()
 	c_menu.visible = false
 	get_parent().add_child.call_deferred(c_menu)
+	
+	lock_shown = false
+	Globals.lock_id = -1
 
 
 func calc_level(add_exp: int) -> void:

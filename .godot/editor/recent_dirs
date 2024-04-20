@@ -1,9 +1,11 @@
+res://sprites/isometric_hero
+res://scripts
+res://scenes
+res://sprites/lockpicking
+res://sprites/lockpicking/5
 res://scenes/enemies
 res://sprites/animals
 res://scripts/gui
-res://scripts
-res://scenes
-res://sprites/isometric_hero
 res://sprites/isometric_heroine
 res://addons/wyvernbox
 res://scenes/dungeon_walls
@@ -18,5 +20,3 @@ res://sprites/fountain_animation
 res://sprites/inventory
 res://themes
 res://sprites/menu
-res://shaders
-res://fonts

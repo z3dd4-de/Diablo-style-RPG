@@ -524,6 +524,7 @@ scale = Vector2(0.25, 0.25)
 
 [node name="Crate2" parent="SolidBodies" instance=ExtResource("12_keyxv")]
 position = Vector2(537, 465)
+has_lockpicking = true
 
 [node name="Crate3" parent="SolidBodies" instance=ExtResource("13_a6kp6")]
 position = Vector2(1007, 466)

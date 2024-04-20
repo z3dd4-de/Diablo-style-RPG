@@ -5,10 +5,30 @@ enum state { CLOSED, OPEN }
 var current_state = state.OPEN
 var player: CharacterBody2D
 
+#lockpicking
+@export var has_lockpicking: bool
+@export var id: int
+var is_unlocked: bool
+var lockpicking: Lockpicking
+var lock = preload("res://scenes/lockpicking.tscn")
+
 
 func _ready() -> void:
 	current_state = state.CLOSED
 	play_anim()
+	if has_lockpicking:
+		is_unlocked = false
+		lockpicking = lock.instantiate()
+		#Globals.lock_id = -1
+		add_child(lockpicking)
+		lockpicking.Unlocked.connect(_unlock)
+	else:
+		is_unlocked = true
+
+
+func _unlock() -> void:
+	is_unlocked = true
+	switch_state()
 
 
 func play_anim() -> void:
@@ -27,7 +47,6 @@ func switch_state() -> void:
 		current_state = state.OPEN
 		if $Inventory != null:
 			$Inventory.visible = true
-	#audio.play()
 	$AudioStreamPlayer2D.play()
 	play_anim()
 
@@ -50,4 +69,12 @@ func _input(event) -> void:
 			elif $Inventory != null and !$Inventory.visible:
 				switch_state()
 		elif current_state == state.CLOSED:
-			switch_state()
+			if has_lockpicking and is_unlocked == false:
+				lockpicking.visible = true
+				Globals.lock_shown = true
+				Globals.lock_id = self.id
+			elif has_lockpicking and is_unlocked:
+				switch_state()
+				Globals.lock_id = -1
+			elif is_unlocked:
+				switch_state()

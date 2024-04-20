@@ -4,8 +4,9 @@ res://example/wyvernbox/item_types/materials/metalscrap_gold.tres
 res://example/wyvernbox/item_types/materials/metalscrap_copper.tres
 res://example/wyvernbox/item_types/materials/metalscrap_iron.tres
 res://example/wyvernbox/item_types/materials/leather.tres
+res://scripts/lockpicking.gd
+res://scripts/crate.gd
 res://scenes/world_1.tscn
-res://scenes/enemies/deer.gd
 res://scenes/user_interface.tscn
 res://scenes/enemies/troll.tscn
 res://scenes/components/thirst.tscn
@@ -40,3 +41,8 @@ res://scenes/harvest_plant.tscn
 res://scenes/character_designer.tscn
 res://scenes/character_builder.tscn
 res://scenes/enemies/deer.tscn
+res://scenes/lockpicking.tscn
+res://scripts/globals.gd
+res://scripts/hero.gd
+res://scripts/gui/character_builder.gd
+res://scripts/character_designer.gd
