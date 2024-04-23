@@ -1423,7 +1423,6 @@ tile_size = Vector2i(64, 32)
 sources/1 = SubResource("TileSetAtlasSource_hph8u")
 
 [node name="DungeonGraveyard" type="Node2D"]
-scale = Vector2(2, 2)
 script = ExtResource("1_fcltd")
 
 [node name="DungeonTileMap" type="TileMap" parent="."]

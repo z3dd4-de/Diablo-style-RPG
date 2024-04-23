@@ -52,7 +52,12 @@ func _hero_died() -> void:
 
 
 func _update_health(addhealth: int) -> void:
-	pass
+	health.restore_health(addhealth)
+
+
+func change_max_health(maxhealth) -> void:
+	Globals.basic_health = maxhealth
+	health.set_basic_health()
 
 
 func update_thirst(addwater: int) -> void:

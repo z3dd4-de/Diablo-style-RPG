@@ -31,6 +31,10 @@ func _ready() -> void:
 	$CanvasLayer.visible = false
 
 
+func _process(delta) -> void:
+	_load_overview()
+
+
 func _input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		self.get_node("CanvasLayer").visible = false
@@ -51,8 +55,7 @@ func _load_overview() -> void:
 	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/NextLevelHSlider.value = Globals.current_experience
 	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/CurrentClassLabel.text = Globals.current_class
 	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/SkillPointsInt.text = str(points)
-	#PlayerName: TODO
-	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/LifePointsStr.text = "100/100" #TODO
+	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer/LifePointsStr.text = str(Globals.basic_health)
 	$CanvasLayer/TabContainer/Overview/VBoxContainer/GridContainer2/GeneralInfoRichtTextLabel.text = Globals.current_descr
 	
 

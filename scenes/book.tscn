@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy2ghtpiwq71a"]
+
+[ext_resource type="Texture2D" uid="uid://bikn16dp7wfa8" path="res://sprites/books/books_misc_trans.png" id="1_bs6q2"]
+[ext_resource type="Script" path="res://scripts/book.gd" id="1_jth6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf6df"]
+size = Vector2(73.3333, 86.6667)
+
+[node name="Book" type="StaticBody2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_jth6u")
+
+[node name="Book1" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(0, 0, 58, 58)
+
+[node name="Book2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(63, 0, 54, 60)
+
+[node name="Book3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(127, -1, 53, 60)
+
+[node name="Book4" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(187.667, 0, 54.3333, 60)
+
+[node name="Book5" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(4.66629, 62.333, 54.6667, 56.6667)
+
+[node name="Book6" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(67.333, 64.333, 52, 55.3333)
+
+[node name="Book7" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(126.666, 64.333, 53.3333, 56)
+
+[node name="Book8" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(190, 63.6663, 50.6667, 56.6667)
+
+[node name="Book9" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(5.99963, 123.666, 50.6667, 57.3334)
+
+[node name="Book10" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(65.9996, 125.666, 52.6667, 55.3334)
+
+[node name="Book11" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(129.333, 123, 50, 58.6667)
+
+[node name="Book12" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(187.333, 125.666, 52.6667, 54)
+
+[node name="Book13" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(248.666, 125.666, 53.3333, 56.6667)
+
+[node name="Book14" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(5.99963, 185.666, 52, 56)
+
+[node name="Book15" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(65.9996, 185, 52, 58)
+
+[node name="Book16" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(127.333, 185.666, 52, 56.6667)
+
+[node name="Book17" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(188.666, 185.666, 51.3333, 56.6667)
+
+[node name="Book18" type="Sprite2D" parent="."]
+texture = ExtResource("1_bs6q2")
+region_enabled = true
+region_rect = Rect2(250, 185.666, 51.3333, 56.6667)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.58946e-06)
+shape = SubResource("RectangleShape2D_sf6df")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

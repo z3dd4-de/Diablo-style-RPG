@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ux8aq6molcfr"]
+[gd_scene load_steps=28 format=3 uid="uid://ux8aq6molcfr"]
 
 [ext_resource type="Script" path="res://scripts/world_1.gd" id="1_la3x2"]
 [ext_resource type="Texture2D" uid="uid://xtngifagharu" path="res://sprites/grassland_tiles/grassland_tiles.png" id="1_p32aa"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://geyd0guosnnw" path="res://scenes/teleport_rune.tscn" id="17_frckf"]
 [ext_resource type="PackedScene" uid="uid://snxd7fwce3h4" path="res://scenes/dungeon_walls/mining_1.tscn" id="18_7t1gw"]
 [ext_resource type="PackedScene" uid="uid://k0500k0qhn7n" path="res://scenes/teleport_activator.tscn" id="18_clai2"]
+[ext_resource type="PackedScene" uid="uid://cy2ghtpiwq71a" path="res://scenes/book.tscn" id="19_76r6b"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="20_wuqd4"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="20_xhxs2"]
 
@@ -547,6 +548,9 @@ position = Vector2(865, 125)
 
 [node name="Mining1" parent="SolidBodies" instance=ExtResource("18_7t1gw")]
 position = Vector2(238, 45)
+
+[node name="Book" parent="SolidBodies" instance=ExtResource("19_76r6b")]
+position = Vector2(481, 695)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_t6g1x")

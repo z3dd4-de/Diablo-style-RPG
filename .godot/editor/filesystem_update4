@@ -41,3 +41,9 @@ res://scenes/character_designer.tscn
 res://scenes/character_builder.tscn
 res://scenes/enemies/deer.tscn
 res://scenes/lockpicking.tscn
+res://scripts/gui/character_builder.gd
+res://scripts/world_1.gd
+res://scripts/components/health_component.gd
+res://scripts/hero.gd
+res://scenes/book.tscn
+res://scripts/book.gd

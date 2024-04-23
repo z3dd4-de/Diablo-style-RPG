@@ -59,5 +59,15 @@ func _on_ok_button_pressed():
 	Globals.player_name = $Panel/GridContainer/NameLineEdit.text
 	Globals.current_class = $Panel/GridContainer/ClassOptionButton.text
 	Globals.current_descr = $Panel/HistoryLongText.text
+	Globals.basic_health = 100
+	match Globals.current_class:
+		"Fighter":
+			Globals.basic_health += 20 
+		"Archer":
+			Globals.basic_health += 20 
+		"Mage":
+			Globals.basic_health -= 10 
+		"Thief":
+			Globals.basic_health += 10 
 	self.visible = false
 	SceneManager.SwitchScene("Intro")

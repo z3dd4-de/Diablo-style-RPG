@@ -11,9 +11,14 @@ signal HealthChanged
 
 
 func _ready() -> void:
+	set_basic_health()
 	current_health = max_health
 	thirst.ReduceHealth.connect(receive_damage)
 	hunger.ReduceHealth.connect(receive_damage)
+
+
+func set_basic_health() -> void:
+	max_health = Globals.basic_health
 
 
 func receive_damage(damage: int) -> void:
