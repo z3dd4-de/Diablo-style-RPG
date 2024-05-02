@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BookResource" load_steps=3 format=3 uid="uid://do4mqbi3mpgcy"]
+
+[ext_resource type="Texture2D" uid="uid://dptu7q8scl7hy" path="res://sprites/books/vendor_book.png" id="1_j2rae"]
+[ext_resource type="Script" path="res://scripts/resources/book_resource.gd" id="2_yc4lv"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_yc4lv")
+type = 2
+book_name = "Book of Vendor"
+level = 1
+points = 5
+description = "Some basics. +5 Vendor"
+image = ExtResource("1_j2rae")

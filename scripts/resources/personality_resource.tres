@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BookResource" load_steps=3 format=3 uid="uid://dohcc8qh3v51"]
+
+[ext_resource type="Texture2D" uid="uid://co223qlss5bfp" path="res://sprites/books/personality_book.png" id="1_i8ddb"]
+[ext_resource type="Script" path="res://scripts/resources/book_resource.gd" id="2_2m4i8"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_2m4i8")
+type = 8
+book_name = "Book of Personality"
+level = 1
+points = 5
+description = "Some basics. +5 Personality"
+image = ExtResource("1_i8ddb")

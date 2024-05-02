@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ux8aq6molcfr"]
+[gd_scene load_steps=29 format=3 uid="uid://ux8aq6molcfr"]
 
 [ext_resource type="Script" path="res://scripts/world_1.gd" id="1_la3x2"]
 [ext_resource type="Texture2D" uid="uid://xtngifagharu" path="res://sprites/grassland_tiles/grassland_tiles.png" id="1_p32aa"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cy2ghtpiwq71a" path="res://scenes/book.tscn" id="19_76r6b"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="20_wuqd4"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="20_xhxs2"]
+[ext_resource type="PackedScene" uid="uid://xmkcrjg6pq6n" path="res://scenes/enemies/deer.tscn" id="22_m43e4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86opu"]
 texture = ExtResource("1_p32aa")
@@ -505,9 +506,6 @@ hero = NodePath("../Hero")
 
 [node name="Message" parent="." instance=ExtResource("7_fdsqn")]
 
-[node name="Troll" parent="." instance=ExtResource("7_wyrcs")]
-position = Vector2(790, 331)
-
 [node name="WaterPolygon2D" type="Polygon2D" parent="."]
 material = SubResource("ShaderMaterial_3aqvs")
 color = Color(1, 1, 1, 0)
@@ -561,3 +559,11 @@ bus = &"Music"
 visible = false
 
 [node name="Item" parent="." instance=ExtResource("20_xhxs2")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Deer" parent="Enemies" instance=ExtResource("22_m43e4")]
+position = Vector2(1645, 207)
+
+[node name="Troll" parent="Enemies" instance=ExtResource("7_wyrcs")]
+position = Vector2(790, 331)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BookResource" load_steps=3 format=3 uid="uid://bjlobyqd234ev"]
+
+[ext_resource type="Texture2D" uid="uid://byp3pgjf1bmhm" path="res://sprites/books/healing_book.png" id="1_vt2qh"]
+[ext_resource type="Script" path="res://scripts/resources/book_resource.gd" id="2_qlemh"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_qlemh")
+type = 7
+book_name = "Book of Healing"
+level = 1
+points = 5
+description = "Some basics. +5 Healing"
+image = ExtResource("1_vt2qh")

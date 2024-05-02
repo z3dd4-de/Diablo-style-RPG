@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BookResource" load_steps=3 format=3 uid="uid://8qb4o5plv6mn"]
+
+[ext_resource type="Texture2D" uid="uid://bvtaxnbjcdpmg" path="res://sprites/books/casting_book.png" id="1_85inv"]
+[ext_resource type="Script" path="res://scripts/resources/book_resource.gd" id="2_8lmsb"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_8lmsb")
+type = 9
+book_name = "Book of Casting"
+level = 1
+points = 5
+description = "Some basics. +5 Casting"
+image = ExtResource("1_85inv")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy2ghtpiwq71a"]
+[gd_scene load_steps=5 format=3 uid="uid://cy2ghtpiwq71a"]
 
 [ext_resource type="Texture2D" uid="uid://bikn16dp7wfa8" path="res://sprites/books/books_misc_trans.png" id="1_bs6q2"]
 [ext_resource type="Script" path="res://scripts/book.gd" id="1_jth6u"]
+[ext_resource type="Theme" uid="uid://cewabv0bsrunb" path="res://themes/basic_theme.tres" id="3_g34kv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf6df"]
-size = Vector2(73.3333, 86.6667)
+size = Vector2(133.333, 130)
 
 [node name="Book" type="StaticBody2D"]
 scale = Vector2(0.3, 0.3)
@@ -113,6 +114,7 @@ region_enabled = true
 region_rect = Rect2(188.666, 185.666, 51.3333, 56.6667)
 
 [node name="Book18" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_bs6q2")
 region_enabled = true
 region_rect = Rect2(250, 185.666, 51.3333, 56.6667)
@@ -120,8 +122,19 @@ region_rect = Rect2(250, 185.666, 51.3333, 56.6667)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1.58946e-06)
 shape = SubResource("RectangleShape2D_sf6df")
+
+[node name="BookLabel" type="Label" parent="."]
+visible = false
+offset_left = -90.0
+offset_top = 33.3333
+offset_right = 90.0
+offset_bottom = 82.3333
+theme = ExtResource("3_g34kv")
+theme_override_font_sizes/font_size = 24
+text = "Sword Fight Level 1"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

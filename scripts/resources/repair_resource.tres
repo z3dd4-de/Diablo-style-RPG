@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BookResource" load_steps=3 format=3 uid="uid://c8lvx03fvx3fk"]
+
+[ext_resource type="Texture2D" uid="uid://dxqkdq45vh217" path="res://sprites/books/repair_book.png" id="1_bo80r"]
+[ext_resource type="Script" path="res://scripts/resources/book_resource.gd" id="2_6ajb3"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_6ajb3")
+type = 5
+book_name = "Book of Repair"
+level = 1
+points = 5
+description = "Some basics. +5 Repair"
+image = ExtResource("1_bo80r")
