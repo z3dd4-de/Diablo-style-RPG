@@ -1,15 +1,14 @@
+Sprite2D
+AnimatedSprite2D
 Node2D
 Label
-Sprite2D
 CollisionShape2D
 Area2D
 StaticBody2D
 Button
 AudioStreamPlayer
-AnimatedSprite2D
 RichTextLabel
 Timer
 Panel
 Control
 CharacterBody2D
-OptionButton

@@ -1,6 +1,8 @@
+res://sprites/environment
+res://shaders
+res://scenes
 res://scripts/resources
 res://scripts
-res://scenes
 res://sprites/isometric_hero
 res://sprites/lockpicking
 res://sprites/lockpicking/5
@@ -13,10 +15,8 @@ res://scenes/dungeon_walls
 res://sprites/grassland_tiles
 res://sprites/twilight-dungeons
 res://scripts/utils
-res://sprites/environment
 res://scenes/Fences
 res://scripts/components
 res://sprites/inventory/questbook
 res://sprites/fountain_animation
 res://sprites/inventory
-res://themes

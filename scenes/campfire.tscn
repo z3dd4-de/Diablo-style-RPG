@@ -1,0 +1,208 @@
+[gd_scene load_steps=25 format=3 uid="uid://dnper6awgl4ex"]
+
+[ext_resource type="Texture2D" uid="uid://dl7nwb6rg6y52" path="res://sprites/environment/props_2x2.png" id="1_fsnsm"]
+[ext_resource type="Shader" path="res://shaders/fire.gdshader" id="2_5wq1w"]
+[ext_resource type="Texture2D" uid="uid://bnaeumtu3vsbl" path="res://sprites/environment/eliptic_mask.png" id="3_it3l1"]
+[ext_resource type="Texture2D" uid="uid://dhybxomikreiu" path="res://sprites/environment/black.png" id="4_nupyt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oosdv"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(1536, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hketa"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(0, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh4ei"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(512, 768, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2vl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oosdv")
+}],
+"loop": false,
+"name": &"burned_down",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hketa")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh4ei")
+}],
+"loop": false,
+"name": &"wood",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utfgk"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(768, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8b4m"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(1280, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tfqo"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(256, 1024, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6dvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utfgk")
+}],
+"loop": false,
+"name": &"blue_potion",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8b4m")
+}],
+"loop": false,
+"name": &"empty",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tfqo")
+}],
+"loop": false,
+"name": &"yellow_potion",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ronxl"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(1792, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3to1"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(256, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k4pu"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(768, 768, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6o1f7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ronxl")
+}],
+"loop": false,
+"name": &"burned_down",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3to1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k4pu")
+}],
+"loop": false,
+"name": &"wood",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik0e3"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(512, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1owj2"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(1024, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvatd"]
+atlas = ExtResource("1_fsnsm")
+region = Rect2(0, 1024, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d78ik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik0e3")
+}],
+"loop": false,
+"name": &"blue_potion",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1owj2")
+}],
+"loop": false,
+"name": &"empty",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvatd")
+}],
+"loop": false,
+"name": &"yellow_potion",
+"speed": 0.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_25acn"]
+diffuse_texture = ExtResource("3_it3l1")
+normal_texture = ExtResource("3_it3l1")
+specular_texture = ExtResource("3_it3l1")
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gc312"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fdhtq"]
+seamless = true
+noise = SubResource("FastNoiseLite_gc312")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6bo3g"]
+shader = ExtResource("2_5wq1w")
+shader_parameter/base_color = Color(1, 0.75, 0.3, 1)
+shader_parameter/edge_color = Color(1, 0.1, 0, 1)
+shader_parameter/fire_alpha = 1.0
+shader_parameter/fire_filter = 0.2
+shader_parameter/fire_power = 10.0
+shader_parameter/fire_speed = Vector2(0, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_fdhtq")
+shader_parameter/mask_texture = SubResource("CanvasTexture_25acn")
+
+[node name="Campfire" type="Node2D"]
+
+[node name="Type_1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c2vl5")
+animation = &"wood"
+
+[node name="Cauldron_1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b6dvt")
+animation = &"blue_potion"
+
+[node name="Type_2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_6o1f7")
+animation = &"wood"
+
+[node name="Cauldron_2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d78ik")
+animation = &"blue_potion"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6bo3g")
+texture = ExtResource("4_nupyt")

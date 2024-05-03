@@ -53,3 +53,6 @@ res://scripts/resources/blacksmith_resource.tres
 res://scripts/resources/casting_resource.tres
 res://scripts/resources/healing_resource.tres
 res://scripts/resources/personality_resource.tres
+res://scenes/fire.tscn
+res://shaders/fire.gdshader
+res://scenes/campfire.tscn
