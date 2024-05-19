@@ -12476,11 +12476,11 @@ y_sort_enabled = true
 script = ExtResource("1_avb4p")
 
 [node name="Clothes" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_feodv")
 animation = &"cast_sw"
 
 [node name="LeatherArmor" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_fua2u")
 animation = &"bow_w"
 

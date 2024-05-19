@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://scripts/globals.gd"
+Global_Hero="*res://scripts/global_hero.gd"
 SceneManager="*res://scripts/utils/scene_manager.gd"
 SaveLoad="*res://scripts/save_load.gd"
 Helpers="*res://scripts/utils/helpers.gd"

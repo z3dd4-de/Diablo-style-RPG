@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ux8aq6molcfr"]
+[gd_scene load_steps=30 format=3 uid="uid://ux8aq6molcfr"]
 
 [ext_resource type="Script" path="res://scripts/world_1.gd" id="1_la3x2"]
 [ext_resource type="Texture2D" uid="uid://xtngifagharu" path="res://sprites/grassland_tiles/grassland_tiles.png" id="1_p32aa"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="20_wuqd4"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="20_xhxs2"]
 [ext_resource type="PackedScene" uid="uid://xmkcrjg6pq6n" path="res://scenes/enemies/deer.tscn" id="22_m43e4"]
+[ext_resource type="PackedScene" uid="uid://dnper6awgl4ex" path="res://scenes/campfire.tscn" id="24_88k4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86opu"]
 texture = ExtResource("1_p32aa")
@@ -567,3 +568,6 @@ position = Vector2(1645, 207)
 
 [node name="Troll" parent="Enemies" instance=ExtResource("7_wyrcs")]
 position = Vector2(790, 331)
+
+[node name="Campfire" parent="." instance=ExtResource("24_88k4m")]
+position = Vector2(424, 545)
